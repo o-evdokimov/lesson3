@@ -1,13 +1,31 @@
 #!/usr/local/bin/python3
 
 import json
+from collections import Counter
 
 def main():
     with open('data-398-2019-05-28.json','r', encoding = 'cp1251') as transport:
         data = json.loads(transport.read())
 
-    for item in data:
-        print(item["Street"])
+    streets = [ item['Street'] for item in data ]
+
+    dict = {}   
+    for street in streets:
+        if street in dict:
+            dict[street] += 1
+        else:
+             dict[street] = 1   
+    #print(dict)
+
+    # method #1
+    
+    max_stops = max(zip(dict.values(), dict.keys()))
+    print(f'\nmethod-1: max_zip: \n max_stops = {max_stops}')
+    
+    # method #2
+    dict_counter = Counter(dict)
+    max_stops = dict_counter.most_common(1)
+    print(f'method-2: collections_Counter: \n max_stops = {max_stops}\n')
 
 if __name__ == '__main__':
     main()

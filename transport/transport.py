@@ -1,5 +1,8 @@
 #!/usr/local/bin/python3
 
+# Считать из csv-файла (с http://data.mos.ru/datasets/752) количество остановок, 
+# вывести улицу, на которой больше всего остановок.
+
 import json
 from collections import Counter
 

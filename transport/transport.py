@@ -10,6 +10,7 @@ def main():
     with open('data-398-2019-05-28.json','r', encoding = 'cp1251') as transport:
         data = json.loads(transport.read())
 
+    print(data[0])
     streets = [ item['Street'] for item in data ]
 
     dict = {}   

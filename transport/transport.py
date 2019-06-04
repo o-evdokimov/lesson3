@@ -8,7 +8,7 @@
 # method-1: max_zip: 
 #  max_stops = (468, 'проезд без названия')
 # method-2: collections_Counter: 
-#  max_stops = [('проезд без названия', 468)]
+#  max_stops = [('проезд без названия', 468)] 
 
 import json
 from collections import Counter

@@ -3,6 +3,13 @@
 # Считать из csv-файла (с http://data.mos.ru/datasets/752) количество остановок, 
 # вывести улицу, на которой больше всего остановок.
 
+# Output:
+#
+# method-1: max_zip: 
+#  max_stops = (468, 'проезд без названия')
+# method-2: collections_Counter: 
+#  max_stops = [('проезд без названия', 468)]
+
 import json
 from collections import Counter
 
@@ -19,7 +26,6 @@ def main():
             dict[street] += 1
         else:
              dict[street] = 1   
-    #print(dict)
 
     # method #1
     
